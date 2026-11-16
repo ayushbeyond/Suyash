@@ -346,6 +346,15 @@ section.sec:not(.dark){background:var(--bg)}
   .artist-visuals .portrait.tall{aspect-ratio:4/5}
   .artist-visuals .portrait figcaption{display:block;font-size:22px}
 }
+
+.foot-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.fc{border:1px solid var(--hair);border-radius:var(--r-md);padding:18px 20px;display:flex;flex-direction:column;gap:6px;transition:border-color .25s,background .25s}
+.fc .mono{color:var(--accent);font-size:11px}
+.fc b{font-weight:500;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em}
+.fc:hover{border-color:var(--accent);background:rgba(232,105,42,.06)}
+.direct{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.legal .credit b{color:var(--accent);font-weight:500}
+@media (max-width:860px){.foot-contact{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -456,7 +465,7 @@ section.sec:not(.dark){background:var(--bg)}
     </div>
     <div class="facts">
       <div class="rv"><span class="mono">Based in</span><b>Indore, India</b></div>
-      <div class="rv d1"><span class="mono">Sings</span><b>Hindi · Urdu · Sufi</b></div>
+      <div class="rv d1"><span class="mono">Sings</span><b>Bollywood · 90s · 2000s</b></div>
       <div class="rv d2"><span class="mono">Setup</span><b>Voice + acoustic guitar</b></div>
       <div class="rv d3"><span class="mono">Formats</span><b>Solo · duo · with band</b></div>
     </div>
@@ -671,6 +680,10 @@ section.sec:not(.dark){background:var(--bg)}
         <li>Corporate evenings <span>Dinners · launches</span></li>
         <li>Collaborations <span>Artists · brands</span></li>
       </ul>
+      <div class="direct rv d2">
+        <a class="btn btn-fill" href="https://wa.me/919165553087" target="_blank" rel="noopener">WhatsApp +91 91655 53087</a>
+        <a class="btn btn-line" href="https://www.instagram.com/_suyashgoswami/" target="_blank" rel="noopener">@_suyashgoswami</a>
+      </div>
     </div>
 
     <form class="enquiry rv d1" id="enquiry" novalidate>
@@ -692,14 +705,15 @@ section.sec:not(.dark){background:var(--bg)}
       <p class="addr" id="formErr" style="display:none;color:var(--accent)">Please add your name and a phone number or email.</p>
 
       <div class="sent" id="sent">
-        <p>Your enquiry is ready. Send it to Suyash on Instagram or by email, and copy it first so you can paste it in.</p>
+        <p>Your enquiry is ready. Send it straight to Suyash on WhatsApp, or copy it for Instagram or email.</p>
         <pre id="sentText"></pre>
         <div class="btns">
-          <button type="button" class="btn btn-fill" id="copyBtn">Copy enquiry</button>
-          <a class="btn btn-line" href="https://ig.me/m/_suyashgoswami" target="_blank" rel="noopener">Message on Instagram</a>
+          <button type="button" class="btn btn-line" id="copyBtn">Copy enquiry</button>
+          <a class="btn btn-fill" id="waBtn" href="https://wa.me/919165553087" target="_blank" rel="noopener">Send on WhatsApp</a>
+          <a class="btn btn-line" href="https://ig.me/m/_suyashgoswami" target="_blank" rel="noopener">Instagram DM</a>
           <a class="btn btn-line" id="mailBtn" href="mailto:hello@suyash.live">Email</a>
         </div>
-        <p class="addr">hello@suyash.live · instagram.com/_suyashgoswami</p>
+        <p class="addr">WhatsApp +91 91655 53087 · hello@suyash.live · @_suyashgoswami</p>
       </div>
     </form>
   </div>
@@ -709,6 +723,12 @@ section.sec:not(.dark){background:var(--bg)}
 <footer>
   <div class="wrap">
     <div class="foot-big">suyash goswami<i>.</i></div>
+    
+    <div class="foot-contact">
+      <a class="fc" href="https://wa.me/919165553087" target="_blank" rel="noopener"><span class="mono">WhatsApp</span><b>+91 91655 53087</b></a>
+      <a class="fc" href="tel:+919165553087"><span class="mono">Call</span><b>+91 91655 53087</b></a>
+      <a class="fc" href="https://www.instagram.com/_suyashgoswami/" target="_blank" rel="noopener"><span class="mono">Instagram</span><b>@_suyashgoswami</b></a>
+    </div>
     <div class="foot-row">
       <div>
         <p class="mono" style="color:var(--muted-d)">Independent artist · Vocalist · Acoustic musician</p>
@@ -716,14 +736,14 @@ section.sec:not(.dark){background:var(--bg)}
       </div>
       <div class="foot-links">
         <a href="https://www.instagram.com/_suyashgoswami/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/919165553087" target="_blank" rel="noopener">WhatsApp</a>
         <a class="soon" href="#" aria-disabled="true">YouTube · soon</a>
-        <a class="soon" href="#" aria-disabled="true">Spotify · soon</a>
-        <a href="#connect">Contact</a>
+        <a href="#connect">Book a date</a>
       </div>
     </div>
     <div class="legal">
       <span>© 2026 Suyash Goswami. All rights reserved.</span>
-      <a href="https://thebeyondbranding.com" target="_blank" rel="noopener">Website by Beyond Branding</a>
+      <a href="https://thebeyondbranding.com" target="_blank" rel="noopener" class="credit">Crafted &amp; designed by <b>thebeyondbranding.com</b></a>
     </div>
   </div>
 </footer>
@@ -832,6 +852,7 @@ section.sec:not(.dark){background:var(--bg)}
     const date=$('#fDate').value, city=$('#fCity').value.trim(), msg=$('#fMsg').value.trim();
     const txt=`Hi Suyash, I'd love to book you.\n\nEvent: ${evType}\nName: ${name}\nContact: ${contact}`+(date?`\nDate: ${date}`:'')+(city?`\nCity / venue: ${city}`:'')+(msg?`\n\n${msg}`:'');
     $('#sentText').textContent=txt;
+    $('#waBtn').href='https://wa.me/919165553087?text='+encodeURIComponent(txt);
     $('#mailBtn').href='mailto:hello@suyash.live?subject='+encodeURIComponent('Booking enquiry — '+evType)+'&body='+encodeURIComponent(txt);
     $('#sent').classList.add('show');
     $('#sent').scrollIntoView({behavior:'smooth',block:'nearest'});
