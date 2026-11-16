@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suyash Goswami — Independent Artist · Vocalist · Acoustic Musician</title>
+<meta name="description" content="Suyash Goswami is an independent vocalist and acoustic musician from Indore. Live performances, acoustic sessions and bookings for private events.">
+<meta property="og:title" content="Suyash Goswami — some songs are meant to be felt.">
+<meta property="og:description" content="Independent artist, vocalist and acoustic musician from Indore. Live at Ohlio, acoustic sessions, private events.">
+<meta property="og:image" content="media/portrait-cafe.jpg">
+<meta name="theme-color" content="#120d0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#ede4d9; --cream-2:#e4d8ca; --paper:#f5efe7;
+  --ink:#241a14; --ink-2:#2f241d; --ink-3:#3b2f27;
+  --muted:#7b6a5d; --muted-d:#b9a898;
+  --accent:#e8692a; --accent-2:#f2884f;
+  --violet:#6b3cff;
+  --r-xl:32px; --r-lg:24px; --r-md:16px;
+  --pad:clamp(20px,4vw,56px);
+  --max:1320px;
+  --display:"Urbanist",system-ui,sans-serif;
+  --mono:"DM Mono",ui-monospace,monospace;
+  --serif:"Instrument Serif",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--display);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--accent);color:#fff}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);vertical-align:middle}
+.accent{color:var(--accent)}
+.h-xl{font-weight:400;letter-spacing:-.045em;line-height:.92;font-size:clamp(58px,11.5vw,176px)}
+.h-lg{font-weight:400;letter-spacing:-.04em;line-height:.95;font-size:clamp(46px,7.4vw,112px)}
+.h-md{font-weight:400;letter-spacing:-.03em;line-height:1.02;font-size:clamp(30px,3.6vw,52px)}
+.lead{font-size:clamp(17px,1.35vw,20px);color:var(--muted);font-weight:400;max-width:34em}
+.dark .lead{color:var(--muted-d)}
+.serif-i{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 24px;border-radius:999px;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;transition:transform .25s ease,background .25s,color .25s,border-color .25s;white-space:nowrap}
+.btn::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.9}
+.btn-fill{background:var(--accent);color:var(--ink)}
+.btn-fill::before{background:var(--ink)}
+.btn-fill:hover{background:var(--accent-2);transform:translateY(-2px)}
+.btn-line{border:1.5px solid currentColor}
+.btn-line::before{background:var(--accent)}
+.btn-line:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.dark .btn-line:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+
+/* header */
+header.top{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .35s,backdrop-filter .35s,box-shadow .35s}
+header.top.scrolled{background:rgba(237,228,217,.82);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 rgba(36,26,20,.08)}
+header.top.on-dark:not(.scrolled){color:var(--cream)}
+.top .bar{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font-weight:600;font-size:26px;letter-spacing:-.04em}
+.logo i{font-style:normal;color:var(--accent)}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8;transition:opacity .2s}
+.nav a:hover{opacity:1}
+.nav .book{opacity:1;background:var(--ink);color:var(--cream);padding:10px 18px;border-radius:999px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--cream);align-items:center;justify-content:center}
+.burger span{display:block;width:16px;height:1.5px;background:currentColor;box-shadow:0 5px 0 currentColor;transform:translateY(-2.5px)}
+.sheet{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--cream);display:flex;flex-direction:column;padding:28px var(--pad);transform:translateY(-100%);transition:transform .55s cubic-bezier(.7,0,.2,1)}
+.sheet:not(.open){visibility:hidden;transition:transform .55s cubic-bezier(.7,0,.2,1),visibility 0s .55s}
+.sheet.open{transform:none;visibility:visible}
+.sheet .x{align-self:flex-end;width:46px;height:46px;border-radius:50%;background:var(--accent);color:var(--ink);font-size:22px}
+.sheet nav{margin-top:auto;display:flex;flex-direction:column;gap:6px}
+.sheet nav a{font-size:clamp(44px,12vw,72px);letter-spacing:-.04em;line-height:1.05}
+.sheet .mono{margin-top:40px;color:var(--muted-d)}
+
+/* hero */
+.hero{padding-top:140px;padding-bottom:var(--pad)}
+.hero h1 .accent{font-weight:400}
+.hero-meta{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px;align-items:end;margin-top:clamp(28px,3vw,44px)}
+.hero-meta .mono{color:var(--muted)}
+.hero-meta .lead{color:var(--ink);opacity:.78}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
+/* now playing card */
+.np{margin-top:clamp(36px,4vw,56px);background:var(--ink);color:var(--cream);border-radius:var(--r-xl);padding:clamp(22px,3vw,40px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,3vw,48px);align-items:stretch;position:relative;overflow:hidden}
+.np::after{content:"";position:absolute;right:-20%;top:-30%;width:70%;height:120%;background:radial-gradient(closest-side,rgba(107,60,255,.28),transparent 70%);pointer-events:none}
+.np-copy{display:flex;flex-direction:column;position:relative;z-index:1}
+.np-copy .mono{color:var(--accent)}
+.np-quote{font-size:clamp(28px,3.2vw,46px);line-height:1.08;letter-spacing:-.03em;margin:18px 0 14px}
+.np-sub{color:var(--muted-d);font-size:15px}
+.player{margin-top:auto;border:1px solid rgba(237,228,217,.14);background:rgba(255,255,255,.03);border-radius:var(--r-md);padding:16px 18px}
+.player-top{display:flex;gap:14px;align-items:center}
+.player-top img{width:52px;height:52px;border-radius:10px;object-fit:cover}
+.player-top b{display:block;font-weight:500;font-size:17px}
+.player-top small{color:var(--muted-d);font-size:13px}
+.bars{margin-left:auto;display:flex;gap:3px;align-items:flex-end;height:20px}
+.bars i{width:3px;background:var(--accent);border-radius:2px;height:30%;transition:height .2s}
+.playing .bars i{animation:eq 1s ease-in-out infinite}
+.bars i:nth-child(2){animation-delay:-.4s}.bars i:nth-child(3){animation-delay:-.7s}.bars i:nth-child(4){animation-delay:-.2s}
+@keyframes eq{0%,100%{height:25%}50%{height:100%}}
+.track{position:relative;height:3px;background:rgba(237,228,217,.16);border-radius:3px;margin:16px 0 10px;cursor:pointer}
+.track b{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--accent);border-radius:3px}
+.track:hover{height:5px;margin-top:15px;margin-bottom:9px}
+.times{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted-d)}
+.times .hint{color:var(--accent)}
+.np-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.np-actions .btn-line{color:var(--cream)}
+.np-media{position:relative;z-index:1;border-radius:var(--r-lg);overflow:hidden;background:#000;aspect-ratio:9/16;max-height:78vh;justify-self:end;width:100%;max-width:440px}
+.np-media video{width:100%;height:100%;object-fit:cover}
+.np-media .chip{position:absolute;left:14px;top:14px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:rgba(36,26,20,.62);color:var(--cream);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.chip.light{background:rgba(237,228,217,.86);color:var(--ink)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 0 rgba(255,59,48,.6);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(255,59,48,0)}100%{box-shadow:0 0 0 0 rgba(255,59,48,0)}}
+.np-media .unmute{left:auto;top:auto;right:14px;bottom:14px;cursor:pointer}
+
+/* marquee */
+.marquee{background:var(--accent);color:var(--ink);overflow:hidden;padding:clamp(14px,2vw,22px) 0;margin:clamp(56px,7vw,96px) 0 0}
+.marquee .row{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee span{font-size:clamp(48px,7vw,104px);letter-spacing:-.045em;line-height:1;padding-right:.5em;white-space:nowrap}
+.marquee span em{font-style:normal;display:inline-block;transform:translateY(-.08em);padding:0 .25em;font-size:.5em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* section scaffolding */
+section{position:relative}
+.sec{padding:clamp(80px,10vw,150px) 0}
+.dark{background:var(--ink);color:var(--cream)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+.split .right{padding-top:clamp(6px,1.2vw,18px)}
+.right .mono{color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.right p+p{margin-top:16px}
+.right .btn{margin-top:28px}
+.ralign{text-align:right}
+
+/* artist */
+.portrait{margin-top:clamp(48px,6vw,80px);border-radius:var(--r-xl);overflow:hidden;position:relative;aspect-ratio:16/9;background:#111}
+.portrait img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.portrait.in img{transform:scale(1)}
+.portrait .chip{position:absolute;left:18px;bottom:18px}
+.portrait figcaption{position:absolute;right:clamp(18px,3vw,40px);bottom:clamp(18px,3vw,40px);color:var(--cream);font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,38px);max-width:12em;text-align:right;line-height:1.1;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(36,26,20,.14);margin-top:clamp(40px,5vw,64px)}
+.facts div{padding:22px 18px 0 0}
+.facts .mono{color:var(--muted);font-size:11px}
+.facts b{display:block;font-weight:500;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em;margin-top:6px}
+
+/* live */
+.stage-img{margin-top:clamp(48px,6vw,72px);border-radius:var(--r-xl);overflow:hidden;position:relative;aspect-ratio:16/8}
+.stage-img img{width:100%;height:100%;object-fit:cover}
+.stage-img .chip{position:absolute;left:18px;top:18px}
+.gigs{margin-top:clamp(40px,5vw,64px);border-top:1px solid rgba(237,228,217,.14)}
+.gig{display:grid;grid-template-columns:1.2fr 1.3fr auto auto;gap:20px;align-items:center;padding:clamp(20px,2.4vw,30px) 8px;border-bottom:1px solid rgba(237,228,217,.14);transition:background .3s,padding .3s}
+.gig:hover{background:rgba(237,228,217,.04);padding-left:16px}
+.gig .when{font-size:clamp(26px,2.6vw,38px);letter-spacing:-.035em;line-height:1}
+.gig .when small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted-d);margin-top:8px;text-transform:uppercase}
+.gig .where b{display:block;font-weight:500;font-size:18px}
+.gig .where span{color:var(--muted-d);font-size:15px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(237,228,217,.2);border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;gap:8px;color:var(--muted-d)}
+.tag::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.gig .btn{height:44px;padding:0 18px;font-size:12px;color:var(--cream)}
+.gig.you .when{color:var(--accent)}
+
+/* sessions */
+.rail{margin-top:clamp(48px,6vw,72px);display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vcard{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--ink);aspect-ratio:9/16;color:var(--cream);isolation:isolate;transform:translateZ(0)}
+.vcard video,.vcard>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .4s}
+.vcard:hover>img{transform:scale(1.04)}
+.vcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,.35) 0%,transparent 28%,transparent 52%,rgba(20,14,10,.88) 100%);z-index:1;pointer-events:none;transition:opacity .4s}
+.vcard.on::after{opacity:.35}
+.vcard .chip{position:absolute;left:12px;top:12px;z-index:2}
+.vcard .meta{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;transition:opacity .4s,transform .4s}
+.vcard.on .meta{opacity:0;transform:translateY(10px)}
+.vcard .meta .mono{color:var(--accent-2);font-size:10.5px}
+.vcard .meta b{display:block;font-weight:500;font-size:clamp(19px,1.6vw,23px);line-height:1.1;letter-spacing:-.02em;margin-top:6px}
+.vcard .play{position:absolute;z-index:3;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;background:var(--accent);color:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .3s,opacity .3s;box-shadow:0 10px 40px rgba(232,105,42,.35)}
+.vcard .play svg{width:20px;height:20px;margin-left:3px}
+.vcard:hover .play{transform:scale(1.08)}
+.vcard.on .play{opacity:0;transform:scale(.7)}
+.vcard.on:hover .play{opacity:1;transform:scale(1)}
+.vcard.on.paused .play{opacity:1}
+.vcard .prog{position:absolute;left:0;right:0;bottom:0;height:3px;z-index:3;background:rgba(255,255,255,.15);opacity:0;transition:opacity .3s}
+.vcard.on .prog{opacity:1}
+.vcard .prog b{display:block;height:100%;width:0;background:var(--accent)}
+.vcard.wide{grid-column:span 2;aspect-ratio:auto}
+.rail-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:28px;color:var(--muted)}
+
+/* behind */
+.bts{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:clamp(48px,6vw,72px)}
+.bts .vcard{grid-column:span 3}
+.bts figure{border-radius:var(--r-lg);overflow:hidden;position:relative;background:#111}
+.bts figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.bts figure:hover img{transform:scale(1.04)}
+.bts .f1{grid-column:span 6;aspect-ratio:9/8}
+.bts .f2,.bts .f3{grid-column:span 3;aspect-ratio:4/5}
+.bts figure .chip{position:absolute;left:12px;bottom:12px}
+.quote-card{grid-column:span 6;background:var(--ink-2);border-radius:var(--r-lg);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;justify-content:space-between;min-height:260px}
+.quote-card p{font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.6vw,40px);line-height:1.12}
+.quote-card .mono{color:var(--accent)}
+
+/* notes */
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:center;margin-top:clamp(48px,6vw,72px)}
+.napkin{position:relative;justify-self:center;max-width:470px;width:100%}
+.napkin img{border-radius:18px;box-shadow:0 30px 80px -20px rgba(36,26,20,.45),0 2px 0 rgba(255,255,255,.4) inset;transform:rotate(-3deg);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.napkin:hover img{transform:rotate(-1deg) scale(1.01)}
+.napkin .chip{position:absolute;right:-6px;top:22px;transform:rotate(4deg);background:var(--accent);color:var(--ink)}
+.transcript{font-family:var(--serif);font-style:italic;font-size:clamp(30px,3.4vw,52px);line-height:1.08;letter-spacing:-.01em}
+.transcript-rest{margin-top:22px;color:var(--muted);font-size:18px;max-width:30em}
+.sig{margin-top:22px;display:flex;align-items:center;gap:12px}
+.sig .mono{color:var(--muted)}
+.wall{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.wall .tag{color:var(--ink);border-color:rgba(36,26,20,.18)}
+
+/* stages strip */
+.stages{border-top:1px solid rgba(36,26,20,.12);border-bottom:1px solid rgba(36,26,20,.12);overflow:hidden;padding:26px 0}
+.stages .row{display:flex;width:max-content;animation:mq 46s linear infinite}
+.stages span{font-size:clamp(28px,3.4vw,46px);letter-spacing:-.035em;padding:0 .7em;white-space:nowrap;color:var(--ink)}
+.stages span:nth-child(odd){font-family:var(--serif);font-style:italic;color:var(--muted)}
+
+/* connect */
+.connect-grid>*{min-width:0}
+.connect-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(36px,6vw,96px);align-items:start}
+.avail{list-style:none;margin-top:30px;border-top:1px solid rgba(237,228,217,.14)}
+.avail li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(237,228,217,.14);font-size:18px}
+.avail li span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted-d);text-transform:uppercase;align-self:center}
+form.enquiry{background:var(--ink-2);border:1px solid rgba(237,228,217,.1);border-radius:var(--r-xl);padding:clamp(22px,3vw,40px)}
+.field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-d)}
+.field input,.field select,.field textarea{font:inherit;font-size:17px;color:var(--cream);background:transparent;border:0;border-bottom:1px solid rgba(237,228,217,.22);padding:10px 0;border-radius:0;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--accent) 50%),linear-gradient(135deg,var(--accent) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 6px) 55%;background-size:6px 6px;background-repeat:no-repeat}
+.field select option{color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
+.field textarea{resize:vertical;min-height:84px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.chips-pick{display:flex;flex-wrap:wrap;gap:8px}
+.chips-pick button{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(237,228,217,.22);border-radius:999px;padding:9px 14px;color:var(--muted-d);transition:all .2s}
+.chips-pick button.sel{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+form .btn{margin-top:8px}
+.sent{display:none;margin-top:22px;border-top:1px solid rgba(237,228,217,.14);padding-top:20px}
+.sent.show{display:block}
+.sent p{color:var(--muted-d);font-size:15px;margin-bottom:14px}
+.sent pre{white-space:pre-wrap;font-family:var(--mono);font-size:12.5px;line-height:1.6;background:rgba(0,0,0,.25);border-radius:12px;padding:14px;color:var(--cream);margin-bottom:14px;max-height:220px;overflow:auto}
+.sent .btns{display:flex;gap:10px;flex-wrap:wrap}
+.sent .btn{color:var(--cream);height:44px;font-size:12px}
+.addr{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted-d);margin-top:12px}
+
+/* footer */
+footer{background:var(--ink);color:var(--cream);padding:clamp(70px,8vw,110px) 0 36px;border-top:1px solid rgba(237,228,217,.08)}
+.foot-big{font-size:clamp(54px,11vw,170px);letter-spacing:-.05em;line-height:.9}
+.foot-big i{font-style:normal;color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-top:40px}
+.foot-row .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.2vw,30px);color:var(--muted-d)}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-links a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.foot-links a:hover{color:var(--accent)}
+.foot-links .soon{opacity:.45;pointer-events:none}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:22px;border-top:1px solid rgba(237,228,217,.1);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-d)}
+.legal a:hover{color:var(--accent)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+.word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.word>span{display:inline-block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.75,.15,1)}
+.in .word>span,.word.in>span{transform:none}
+
+/* responsive */
+@media (max-width:1080px){
+  .rail{grid-template-columns:repeat(3,1fr)}
+  .vcard.wide{grid-column:span 3;aspect-ratio:16/9}
+  .bts .vcard{grid-column:span 6}
+  .bts .f1{grid-column:span 12;aspect-ratio:16/10}
+  .bts .f2,.bts .f3{grid-column:span 6;aspect-ratio:4/5}
+  .quote-card{grid-column:span 12}
+}
+@media (max-width:860px){
+  .nav{display:none}.burger{display:flex}
+  .hero{padding-top:118px}
+  .hero-meta,.split,.notes,.connect-grid{grid-template-columns:1fr}
+  .np{grid-template-columns:1fr}
+  .np-media{justify-self:stretch;max-width:none;max-height:none;order:-1}
+  .ralign{text-align:left}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div{padding-bottom:18px}
+  .gig{grid-template-columns:1fr auto;gap:12px 16px}
+  .gig .where{grid-column:1/-1;grid-row:2}
+  .gig .tag{grid-column:1;grid-row:3;justify-self:start}
+  .gig .btn{grid-column:2;grid-row:1 / span 1;align-self:start}
+  .rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);padding:0 var(--pad) 8px;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .rail .vcard{flex:0 0 72%;scroll-snap-align:center}
+  .rail .vcard.wide{flex:0 0 88%;aspect-ratio:9/12}
+  .stage-img{aspect-ratio:4/3}
+  .portrait{aspect-ratio:4/3}
+  .portrait figcaption{display:none}
+  .row2{grid-template-columns:1fr}
+  .napkin{max-width:360px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}.word>span{transform:none}
+}
+
+/* ===== dark theme (orange accent preserved) ===== */
+:root{--bg:#120d0a;--bg-2:#1a1410;--card:#221a15;--txt:#efe6db;--txt-2:#c9bbad;--mut:#93837a;--hair:rgba(239,230,219,.11)}
+body{background:var(--bg);color:var(--txt)}
+.lead{color:var(--mut)}
+.hero-meta .lead{color:var(--txt-2);opacity:1}
+.hero-meta .mono{color:var(--mut)}
+header.top.scrolled{background:rgba(18,13,10,.84);box-shadow:0 1px 0 var(--hair)}
+.nav .book{background:var(--accent);color:#120d0a}
+.burger{background:var(--card);color:var(--txt);border:1px solid var(--hair)}
+.btn-line:hover,.dark .btn-line:hover{background:var(--txt);color:#120d0a;border-color:var(--txt)}
+.np{background:var(--card);border:1px solid var(--hair)}
+.dark{background:var(--bg-2);color:var(--txt)}
+.dark .lead{color:var(--mut)}
+.facts{border-top-color:var(--hair)}
+.facts .mono{color:var(--mut)}
+.gigs,.gig{border-color:var(--hair)}
+.quote-card{background:var(--card)}
+.rail-foot{color:var(--mut)}
+.transcript-rest{color:var(--txt-2)}
+.sig .mono{color:var(--mut)}
+.wall .tag{color:var(--txt);border-color:var(--hair)}
+.stages{border-color:var(--hair);background:var(--bg)}
+.stages span{color:var(--txt)}
+.stages span:nth-child(odd){color:var(--mut)}
+form.enquiry{background:var(--card)}
+.sheet{background:#0d0907}
+footer{background:#0d0907;border-top-color:var(--hair)}
+.napkin img{box-shadow:0 30px 80px -20px rgba(0,0,0,.7)}
+.marquee{margin-top:clamp(56px,7vw,96px)}
+section.sec:not(.dark){background:var(--bg)}
+.vcard{background:#000}
+/* artist visuals */
+.artist-visuals{display:grid;grid-template-columns:5fr 7fr;gap:18px;margin-top:clamp(48px,6vw,80px)}
+.artist-visuals .portrait{margin-top:0;aspect-ratio:16/9}
+.artist-visuals .portrait.tall{aspect-ratio:auto;min-height:100%}
+.artist-visuals .portrait.tall img{object-position:50% 30%}
+.av-stack{display:grid;gap:18px}
+.artist-visuals .portrait .chip{left:16px;bottom:16px;top:auto}
+@media (max-width:860px){
+  .artist-visuals{grid-template-columns:1fr}
+  .artist-visuals .portrait.tall{aspect-ratio:4/5}
+  .artist-visuals .portrait figcaption{display:block;font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap bar">
+    <a href="#hero" class="logo" aria-label="Suyash Goswami home">suyash<i>.</i></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#artist">The artist</a>
+      <a href="#live">Live</a>
+      <a href="#sessions">Sessions</a>
+      <a href="#people">Notes</a>
+      <a href="#connect" class="book">Book a date</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="x" id="sheetClose" aria-label="Close menu">×</button>
+  <nav>
+    <a href="#artist">the artist</a>
+    <a href="#live">live</a>
+    <a href="#sessions">sessions</a>
+    <a href="#behind">behind the music</a>
+    <a href="#connect" class="accent">book a date</a>
+  </nav>
+  <p class="mono">Suyash Goswami · Indore, India</p>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <h1 class="h-xl split-words">some songs are meant to be felt<span class="accent">.</span></h1>
+    <div class="hero-meta">
+      <p class="mono rv"><span class="dot"></span>&nbsp; Suyash Goswami · Independent artist · Vocalist · Acoustic musician</p>
+      <div class="rv d1">
+        <p class="lead">An independent musician, vocalist and storyteller from Indore, finding his voice through melodies, lyrics and acoustic sounds.</p>
+        <div class="hero-ctas">
+          <a href="#sessions" class="btn btn-fill">Listen to my music</a>
+          <a href="#artist" class="btn btn-line">Explore my journey</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="np rv d2" id="np">
+      <div class="np-copy">
+        <p class="mono">Now playing · Live at Ohlio, Indore</p>
+        <p class="np-quote">“the room went quiet.<br>the song didn’t.”</p>
+        <p class="np-sub">Straight off the stage: one take, one guitar, the room’s own sound. No studio, no filters.</p>
+        <div class="player" id="player">
+          <div class="player-top">
+            <img src="media/g-01_ohlio_closeup_4k.jpg" alt="">
+            <div><b>Live at Ohlio</b><small>Suyash Goswami · unplugged</small></div>
+            <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="track" id="track"><b id="trackFill"></b></div>
+          <div class="times"><span id="tCur">0:00</span><span class="hint" id="tHint">Press play to listen</span><span id="tDur">0:33</span></div>
+        </div>
+        <div class="np-actions">
+          <button class="btn btn-fill" id="npPlay">Play with sound</button>
+          <a href="#sessions" class="btn btn-line">More sessions</a>
+        </div>
+      </div>
+      <div class="np-media">
+        <video id="heroVid" src="media/hero-ohlio.mp4" poster="media/hero-ohlio.jpg" muted loop playsinline autoplay preload="metadata"></video>
+        <span class="chip"><span class="live-dot"></span> Live · Ohlio</span>
+        <button class="chip unmute" id="unmute">♪ Tap for sound</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="row">
+  <span>some songs are meant to be felt <em>●</em> live at ohlio <em>●</em> voice &amp; guitar <em>●</em> </span>
+  <span>some songs are meant to be felt <em>●</em> live at ohlio <em>●</em> voice &amp; guitar <em>●</em> </span>
+</div></div>
+
+<!-- THE ARTIST -->
+<section class="sec" id="artist">
+  <div class="wrap">
+    <div class="split">
+      <h2 class="h-lg split-words ralign">a little music.<br>a lot of feeling.</h2>
+      <div class="right rv">
+        <p class="mono"><span class="dot"></span> The artist</p>
+        <p class="lead">For Suyash Goswami, music is more than performing a song. It’s about creating moments that stay with people long after the last note fades.</p>
+        <p class="lead">Through acoustic melodies, familiar tunes and heartfelt performances, he brings a personal touch to every song he sings, from Bollywood favourites to ghazals and Sufi classics.</p>
+        <p class="lead">Whether it’s an intimate acoustic session or a live stage, his approach stays simple: connect with the music, feel every lyric, and let the moment speak for itself.</p>
+        <a href="#sessions" class="btn btn-line">Hear the voice</a>
+      </div>
+    </div>
+    <div class="artist-visuals">
+      <figure class="portrait tall rv" id="portrait">
+        <img src="media/portrait-cafe.jpg" alt="Suyash Goswami singing with his acoustic guitar under warm café lights" loading="lazy">
+        <span class="chip light">Suyash Goswami · Indore</span>
+      </figure>
+      <div class="av-stack">
+        <figure class="portrait rv d1">
+          <img src="media/jam-tabla-harmonium.jpg" alt="Suyash on harmonium with a tabla player in a ghazal session" loading="lazy">
+          <span class="chip">Harmonium &amp; tabla · ghazal sessions</span>
+        </figure>
+        <figure class="portrait rv d2">
+          <img src="media/portrait-bw.jpg" alt="Black and white portrait of Suyash with his guitar" loading="lazy">
+          <figcaption>“connect with the music. feel every lyric.”</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="rv"><span class="mono">Based in</span><b>Indore, India</b></div>
+      <div class="rv d1"><span class="mono">Sings</span><b>Hindi · Urdu · Sufi</b></div>
+      <div class="rv d2"><span class="mono">Setup</span><b>Voice + acoustic guitar</b></div>
+      <div class="rv d3"><span class="mono">Formats</span><b>Solo · duo · with band</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE -->
+<section class="sec dark" id="live">
+  <div class="wrap">
+    <div class="split">
+      <h2 class="h-lg split-words ralign">the stage is where everything comes alive.</h2>
+      <div class="right rv">
+        <p class="mono"><span class="dot"></span> Live performances</p>
+        <p class="lead">Every performance has its own energy. Every audience, a different story.</p>
+        <p class="lead">From intimate acoustic evenings to vibrant live sessions, Suyash brings vocals, guitar and an atmosphere built around the love of music. Good music. Real moments. Unforgettable evenings.</p>
+        <a href="#connect" class="btn btn-fill">Book a live set</a>
+      </div>
+    </div>
+
+    <figure class="stage-img rv">
+      <img src="media/stage-ohlio.jpg" alt="Suyash Goswami performing on stage at Ohlio under violet lights" loading="lazy">
+      <span class="chip"><span class="live-dot"></span> On stage · Ohlio, Indore</span>
+    </figure>
+
+    <div class="gigs">
+      <div class="gig rv">
+        <div class="when">ohlio<small>Indore · stage regular</small></div>
+        <div class="where"><b>Live sets &amp; duo nights</b><span>Solo sets, guitar duos and guest vocalists</span></div>
+        <span class="tag">Resident stage</span>
+        <a href="#sessions" class="btn btn-line">Watch</a>
+      </div>
+      <div class="gig rv">
+        <div class="when">sayaji<small>Indore · collaboration</small></div>
+        <div class="where"><b>Live music evenings</b><span>Acoustic performances for hotel guests and gatherings</span></div>
+        <span class="tag">Hospitality</span>
+        <a href="#connect" class="btn btn-line">Enquire</a>
+      </div>
+      <div class="gig rv">
+        <div class="when">jaivik setu<small>Indore · collaboration</small></div>
+        <div class="where"><b>Acoustic sessions</b><span>Unplugged music at Indore’s organic farmers’ market</span></div>
+        <span class="tag">Community</span>
+        <a href="#connect" class="btn btn-line">Enquire</a>
+      </div>
+      <div class="gig rv">
+        <div class="when">themed nights<small>Indore · events</small></div>
+        <div class="where"><b>Bollywood Night · Sundays Soulful</b><span>Headline sets built around a theme and a crowd that sings along</span></div>
+        <span class="tag">Special nights</span>
+        <a href="#connect" class="btn btn-line">Plan one</a>
+      </div>
+      <div class="gig you rv">
+        <div class="when">your evening<small>Anywhere · 2026–27</small></div>
+        <div class="where"><b>Private events &amp; collaborations</b><span>House concerts, weddings &amp; sangeet, corporate evenings, café residencies</span></div>
+        <span class="tag">Now booking</span>
+        <a href="#connect" class="btn btn-fill">Book a date</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSIONS -->
+<section class="sec" id="sessions">
+  <div class="wrap">
+    <div class="split">
+      <h2 class="h-lg split-words ralign">stripped back.<br>felt deeply.</h2>
+      <div class="right rv">
+        <p class="mono"><span class="dot"></span> Acoustic sessions</p>
+        <p class="lead">Sometimes, all a song needs is a voice and a guitar.</p>
+        <p class="lead">Acoustic covers, musical experiments and familiar melodies reimagined through Suyash’s perspective. No unnecessary noise. Just music that feels right.</p>
+      </div>
+    </div>
+
+    <div class="rail" id="rail">
+      <article class="vcard rv" data-src="media/gulon-mein-rang-bhare.mp4">
+        <img src="media/gulon-mein-rang-bhare.jpg" alt="" loading="lazy">
+        <span class="chip">01:13</span>
+        <button class="play" aria-label="Play Gulon Mein Rang Bhare"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Ghazal · tabla &amp; harmonium</span><b>Gulon Mein Rang Bhare</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+      <article class="vcard rv d1" data-src="media/nusrat-tribute.mp4">
+        <img src="media/nusrat-tribute.jpg" alt="" loading="lazy">
+        <span class="chip">00:54</span>
+        <button class="play" aria-label="Play tribute to Nusrat Fateh Ali Khan"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Sufi · a tribute</span><b>For the legend, Nusrat Fateh Ali Khan</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+      <article class="vcard rv d2" data-src="media/song-from-another-time.mp4">
+        <img src="media/song-from-another-time.jpg" alt="" loading="lazy">
+        <span class="chip">01:00</span>
+        <button class="play" aria-label="Play A song from another time"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Live · unplugged</span><b>A song from another time</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+      <article class="vcard rv d3" data-src="media/sunday-sessions.mp4">
+        <img src="media/sunday-sessions.jpg" alt="" loading="lazy">
+        <span class="chip">01:00</span>
+        <button class="play" aria-label="Play Sunday sessions"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Live · Nov 2025</span><b>Sunday sessions</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+      <article class="vcard rv" data-src="media/session-home.mp4">
+        <img src="media/session-home.jpg" alt="" loading="lazy">
+        <span class="chip">01:34</span>
+        <button class="play" aria-label="Play late-night home session"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Home session</span><b>One lamp, one guitar</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+      <article class="vcard rv d1" data-src="media/ohlio-duo.mp4">
+        <img src="media/ohlio-duo.jpg" alt="" loading="lazy">
+        <span class="chip">00:46</span>
+        <button class="play" aria-label="Play Ohlio duo set"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Live · Ohlio</span><b>Two guitars, one stage</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+      <article class="vcard wide rv d2" data-src="media/ohlio-stage-duo.mp4">
+        <img src="media/ohlio-stage-duo.jpg" alt="" loading="lazy">
+        <span class="chip">01:47</span>
+        <button class="play" aria-label="Play Ohlio duo with guest vocalist"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Live · Ohlio · with a guest vocalist</span><b>Duo night under the violet lights</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+    </div>
+    <div class="rail-foot">
+      <span class="mono">Previews on site · full sessions on Instagram</span>
+      <a class="btn btn-line" href="https://www.instagram.com/_suyashgoswami/" target="_blank" rel="noopener">Watch all on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEHIND THE MUSIC -->
+<section class="sec dark" id="behind">
+  <div class="wrap">
+    <div class="split">
+      <h2 class="h-lg split-words ralign">beyond the microphone.</h2>
+      <div class="right rv">
+        <p class="mono"><span class="dot"></span> Behind the music</p>
+        <p class="lead">The rehearsals, the little imperfections, the late-night sessions and everything that happens between performances. This is where the music takes shape.</p>
+        <p class="lead">A glimpse into the person behind the songs, one moment at a time.</p>
+      </div>
+    </div>
+
+    <div class="bts">
+      <figure class="f1 rv"><img src="media/g-06_ohlio_bw_beams_4k.jpg" alt="Black and white photo of Suyash on stage under light beams" loading="lazy"><span class="chip">Soundcheck light · Ohlio</span></figure>
+      <article class="vcard rv d1" data-src="media/throwback-2014.mp4">
+        <img src="media/throwback-2014.jpg" alt="" loading="lazy">
+        <span class="chip">2014</span>
+        <button class="play" aria-label="Play 2014 throwback"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Where it started</span><b>2014, a friend, and this song</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+      <article class="vcard rv d2" data-src="media/ai-vs-live.mp4">
+        <img src="media/ai-vs-live.jpg" alt="" loading="lazy">
+        <span class="chip">00:10</span>
+        <button class="play" aria-label="Play AI versus live music"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+        <div class="meta"><span class="mono">Off stage</span><b>Can AI replace live music?</b></div>
+        <div class="prog"><b></b></div>
+      </article>
+      <figure class="f2 rv"><img src="media/g-08_home_session.jpg" alt="Suyash playing guitar at home late at night" loading="lazy"><span class="chip">Late-night practice</span></figure>
+      <figure class="f3 rv d1"><img src="media/g-02_ohlio_side_angle_4k.jpg" alt="Suyash singing on stage, side angle" loading="lazy"><span class="chip">Mid-song</span></figure>
+      <div class="quote-card rv d2">
+        <p>“back when making a video meant something.”</p>
+        <span class="mono">— Suyash, on the 2014 recording</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section class="sec" id="people">
+  <div class="wrap">
+    <div class="split">
+      <h2 class="h-lg split-words ralign">the best feedback comes from the people who listen.</h2>
+      <div class="right rv">
+        <p class="mono"><span class="dot"></span> The people &amp; the music</p>
+        <p class="lead">Every performance leaves something behind. Sometimes it’s applause. Sometimes it’s a handwritten note.</p>
+        <p class="lead">And sometimes it’s simply knowing that a song made someone’s evening a little better.</p>
+      </div>
+    </div>
+
+    <div class="notes">
+      <div class="napkin rv">
+        <img src="media/note.jpg" alt="Handwritten thank-you note from guests on a napkin" loading="lazy">
+        <span class="chip">Left on the table · 20.01</span>
+      </div>
+      <div class="rv d1">
+        <p class="transcript">“thank you for making our evening very pleasant and soothing.”</p>
+        <p class="transcript-rest">“Your selection of songs, voice, also the band, it’s all very good. Keep up the good work. You will reach heights.”</p>
+        <div class="sig"><span class="dot"></span><span class="mono">Handwritten by guests after a live evening</span></div>
+        <div class="wall">
+          <span class="tag">pleasant</span><span class="tag">soothing</span><span class="tag">selection of songs</span><span class="tag">the voice</span><span class="tag">the band</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stages" aria-label="Stages and collaborations"><div class="row">
+  <span>ohlio</span><span>sayaji indore</span><span>jaivik setu</span><span>bollywood night</span><span>sundays soulful</span><span>house concerts</span>
+  <span>ohlio</span><span>sayaji indore</span><span>jaivik setu</span><span>bollywood night</span><span>sundays soulful</span><span>house concerts</span>
+</div></div>
+
+<!-- CONNECT -->
+<section class="sec dark" id="connect">
+  <div class="wrap connect-grid">
+    <div>
+      <p class="mono accent rv" style="margin-bottom:20px"><span class="dot"></span>&nbsp; Let’s connect</p>
+      <h2 class="h-lg split-words">let’s make an evening memorable.</h2>
+      <p class="lead rv" style="margin-top:26px">Looking for an acoustic performer or vocalist for your next event, private gathering or live-music evening? Let’s create something worth remembering.</p>
+      <ul class="avail rv d1">
+        <li>Live performances <span>Venues · cafés</span></li>
+        <li>Private events <span>House concerts · sangeet</span></li>
+        <li>Corporate evenings <span>Dinners · launches</span></li>
+        <li>Collaborations <span>Artists · brands</span></li>
+      </ul>
+    </div>
+
+    <form class="enquiry rv d1" id="enquiry" novalidate>
+      <div class="field"><label>Type of event</label>
+        <div class="chips-pick" id="evType">
+          <button type="button" class="sel">Private gathering</button><button type="button">Wedding / sangeet</button><button type="button">Corporate</button><button type="button">Venue / café</button><button type="button">Collaboration</button>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="fName">Your name</label><input id="fName" required autocomplete="name"></div>
+        <div class="field"><label for="fContact">Phone or email</label><input id="fContact" required></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="fDate">Date</label><input id="fDate" type="date"></div>
+        <div class="field"><label for="fCity">City / venue</label><input id="fCity" placeholder="Indore"></div>
+      </div>
+      <div class="field"><label for="fMsg">Tell us about the evening</label><textarea id="fMsg" placeholder="Guests, vibe, songs you love…"></textarea></div>
+      <button class="btn btn-fill" type="submit">Get in touch</button>
+      <p class="addr" id="formErr" style="display:none;color:var(--accent)">Please add your name and a phone number or email.</p>
+
+      <div class="sent" id="sent">
+        <p>Your enquiry is ready. Send it to Suyash on Instagram or by email, and copy it first so you can paste it in.</p>
+        <pre id="sentText"></pre>
+        <div class="btns">
+          <button type="button" class="btn btn-fill" id="copyBtn">Copy enquiry</button>
+          <a class="btn btn-line" href="https://ig.me/m/_suyashgoswami" target="_blank" rel="noopener">Message on Instagram</a>
+          <a class="btn btn-line" id="mailBtn" href="mailto:hello@suyash.live">Email</a>
+        </div>
+        <p class="addr">hello@suyash.live · instagram.com/_suyashgoswami</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-big">suyash goswami<i>.</i></div>
+    <div class="foot-row">
+      <div>
+        <p class="mono" style="color:var(--muted-d)">Independent artist · Vocalist · Acoustic musician</p>
+        <p class="tagline" style="margin-top:10px">some songs are meant to be felt.</p>
+      </div>
+      <div class="foot-links">
+        <a href="https://www.instagram.com/_suyashgoswami/" target="_blank" rel="noopener">Instagram</a>
+        <a class="soon" href="#" aria-disabled="true">YouTube · soon</a>
+        <a class="soon" href="#" aria-disabled="true">Spotify · soon</a>
+        <a href="#connect">Contact</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Suyash Goswami. All rights reserved.</span>
+      <a href="https://thebeyondbranding.com" target="_blank" rel="noopener">Website by Beyond Branding</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+  /* split headings into words for the reveal */
+  $$('.split-words').forEach(h=>{
+    const walk=node=>{
+      [...node.childNodes].forEach(n=>{
+        if(n.nodeType===3){
+          const frag=document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(p=>{
+            if(!p) return;
+            if(/^\s+$/.test(p)){frag.appendChild(document.createTextNode(' '));return;}
+            const w=document.createElement('span');w.className='word';
+            const i=document.createElement('span');i.textContent=p;w.appendChild(i);frag.appendChild(w);
+          });
+          n.replaceWith(frag);
+        } else if(n.nodeType===1 && n.tagName!=='BR'){ walk(n); }
+      });
+    };
+    walk(h);
+    $$('.word>span',h).forEach((s,i)=>s.style.transitionDelay=(i*0.06)+'s');
+  });
+
+  /* reveal on scroll */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  $$('.rv,.split-words,.portrait').forEach(el=>io.observe(el));
+
+  /* header state */
+  const top=$('#top'); const darkSecs=$$('.dark,footer');
+  const onScroll=()=>{
+    top.classList.toggle('scrolled',scrollY>30);
+  };
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* mobile menu */
+  const sheet=$('#sheet');
+  $('#burger').onclick=()=>{sheet.classList.add('open');sheet.setAttribute('aria-hidden','false')};
+  const close=()=>{sheet.classList.remove('open');sheet.setAttribute('aria-hidden','true')};
+  $('#sheetClose').onclick=close; $$('#sheet a').forEach(a=>a.onclick=close);
+
+  /* hero player */
+  const hv=$('#heroVid'), np=$('#np'), fill=$('#trackFill'), tCur=$('#tCur'), tDur=$('#tDur'), hint=$('#tHint'), npBtn=$('#npPlay'), unm=$('#unmute');
+  const fmt=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+  let withSound=false;
+  const setUI=()=>{
+    np.classList.toggle('playing',withSound && !hv.paused);
+    npBtn.textContent = withSound && !hv.paused ? 'Pause' : 'Play with sound';
+    hint.textContent = withSound ? (hv.paused?'Paused':'Now playing') : 'Press play to listen';
+    unm.style.display = withSound ? 'none' : '';
+  };
+  hv.addEventListener('loadedmetadata',()=>tDur.textContent=fmt(hv.duration));
+  hv.addEventListener('timeupdate',()=>{ if(hv.duration){fill.style.width=(hv.currentTime/hv.duration*100)+'%'; tCur.textContent=fmt(hv.currentTime);} });
+  const playSound=()=>{
+    pauseCards();
+    if(!withSound){withSound=true; hv.currentTime=0;}
+    hv.muted=false; hv.loop=false;
+    const p=hv.play(); if(p&&p.catch) p.catch(()=>{});
+    setUI();
+  };
+  npBtn.onclick=()=>{ if(withSound && !hv.paused){hv.pause();setUI();} else playSound(); };
+  unm.onclick=playSound;
+  hv.addEventListener('ended',()=>{hv.muted=true;hv.loop=true;withSound=false;hv.play().catch(()=>{});setUI();});
+  hv.addEventListener('pause',setUI); hv.addEventListener('play',setUI);
+  $('#track').onclick=e=>{const r=e.currentTarget.getBoundingClientRect(); if(hv.duration){hv.currentTime=(e.clientX-r.left)/r.width*hv.duration; if(!withSound) playSound();}};
+  /* pause the muted hero loop when off screen to save battery */
+  new IntersectionObserver(es=>es.forEach(e=>{ if(!withSound){ e.isIntersecting? hv.play().catch(()=>{}) : hv.pause(); } }),{threshold:.15}).observe(hv);
+
+  /* session cards: one plays at a time, with sound */
+  let current=null;
+  function pauseCards(){ if(current){ const v=$('video',current); if(v) v.pause(); current.classList.add('paused'); } }
+  $$('.vcard[data-src]').forEach(card=>{
+    const btn=$('.play',card), bar=$('.prog b',card);
+    const start=()=>{
+      let v=$('video',card);
+      if(!v){
+        v=document.createElement('video'); v.src=card.dataset.src; v.playsInline=true; v.setAttribute('playsinline',''); v.preload='auto';
+        v.addEventListener('timeupdate',()=>{ if(v.duration) bar.style.width=(v.currentTime/v.duration*100)+'%'; });
+        v.addEventListener('ended',()=>{card.classList.remove('on','paused');v.currentTime=0;bar.style.width='0';});
+        card.prepend(v);
+      }
+      if(current && current!==card){ const cv=$('video',current); if(cv){cv.pause();} current.classList.remove('on','paused'); }
+      if(withSound && !hv.paused){ hv.pause(); }
+      current=card;
+      if(card.classList.contains('on') && !v.paused){ v.pause(); card.classList.add('paused'); return; }
+      card.classList.add('on'); card.classList.remove('paused');
+      const p=v.play(); if(p&&p.catch) p.catch(()=>{card.classList.remove('on')});
+      $('img',card).style.opacity='0';
+    };
+    btn.addEventListener('click',e=>{e.stopPropagation();start();});
+    card.addEventListener('click',start);
+  });
+
+  /* enquiry form */
+  let evType='Private gathering';
+  $$('#evType button').forEach(b=>b.onclick=()=>{$$('#evType button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');evType=b.textContent;});
+  $('#enquiry').addEventListener('submit',e=>{
+    e.preventDefault();
+    const name=$('#fName').value.trim(), contact=$('#fContact').value.trim();
+    if(!name||!contact){ $('#formErr').style.display='block'; return; }
+    $('#formErr').style.display='none';
+    const date=$('#fDate').value, city=$('#fCity').value.trim(), msg=$('#fMsg').value.trim();
+    const txt=`Hi Suyash, I'd love to book you.\n\nEvent: ${evType}\nName: ${name}\nContact: ${contact}`+(date?`\nDate: ${date}`:'')+(city?`\nCity / venue: ${city}`:'')+(msg?`\n\n${msg}`:'');
+    $('#sentText').textContent=txt;
+    $('#mailBtn').href='mailto:hello@suyash.live?subject='+encodeURIComponent('Booking enquiry — '+evType)+'&body='+encodeURIComponent(txt);
+    $('#sent').classList.add('show');
+    $('#sent').scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+  $('#copyBtn').onclick=async()=>{
+    try{ await navigator.clipboard.writeText($('#sentText').textContent); $('#copyBtn').textContent='Copied'; }
+    catch(_){ const r=document.createRange(); r.selectNodeContents($('#sentText')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); $('#copyBtn').textContent='Selected — copy it'; }
+    setTimeout(()=>$('#copyBtn').textContent='Copy enquiry',2200);
+  };
+})();
+</script>
+</body>
+</html>
