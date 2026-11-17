@@ -10,4 +10,4 @@ Static single-page site (`index.html` + `media/`). No build step: open `index.ht
 
 Crafted & designed by [thebeyondbranding.com](https://thebeyondbranding.com).
 
-Contact: WhatsApp / call +91 91655 53087 · Instagram [@_suyashgoswami](https://www.instagram.com/_suyashgoswami/)
+Contact: WhatsApp / call +91 91655 53087 · Instagram [@suyashislive](https://www.instagram.com/suyashislive/)
