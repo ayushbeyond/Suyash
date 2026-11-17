@@ -25,6 +25,8 @@ All Indore-targeted, all end on the same action: **date + venue on WhatsApp**.
 
 ## Reel 1 — "Stage set hai. Music?" (Weddings / sangeet) · 15 s ad
 
+> ⚠️ Build only after Suyash confirms the singer in DSamz is him. In some frames it doesn't clearly look like him, so it was kept out of the FM reel.
+
 **Audience:** families planning weddings, aged 25–50, Indore + 25 km, plus a recently-engaged ad set.
 **Psychology:** the viewer can *see* a wedding stage, so it's proof rather than a promise. It answers "has he done events like mine?"
 
@@ -76,7 +78,7 @@ Works organically (shareable, comment bait) and as a cheap reach ad.
 | Time | Picture | Big type | Voice (reuse) |
 |---|---|---|---|
 | 0–1.5 | DRZe harmonium | **ghazal?** | **C** |
-| 1.5–3.5 | DSamz stage, arm up | **90s?** | **D** |
+| 1.5–3.5 | 1782 B&W stage (or DSamz once confirmed) | **90s?** | **D** |
 | 3.5–5 | 005 / DMswv unplugged | **unplugged?** | **E** |
 | 5–8.5 | 1783 purple close → 1782 B&W | **sab milega. LIVE.** | **F** |
 | 8.5–12 | Card | **comment your favourite song 👇** / WhatsApp for events | **G** (shortened) |
